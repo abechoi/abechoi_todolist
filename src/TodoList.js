@@ -7,13 +7,15 @@ const TodoList = () => {
   const { todos } = useContext(TodoContext);
 
   return todos.length ? (
-      <ul>
+      <ul style={{ padding: 0, margin: 0 }}>
         { todos.map( todo => (
           <TodoDetails todo={ todo } key={ todo.id }/>
         ))}
       </ul>
   ) : (
-    <div className="empty">Todo List is empty!</div>
+    <div style={{ marginTop: 75, fontSize: 30 }}>
+      Todo List is empty!
+    </div>
   );
 }
 export default TodoList;
